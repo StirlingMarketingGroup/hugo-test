@@ -31,6 +31,8 @@ Once the call succeeds, the client should redirect the user to a "Contact Succes
 
 > Thank you for your request! We will reach out within 24 hours!
 
+The API that this is connected to is *live*! So don't send anything too stupid. Our sales people are used to ignoring test messages.
+
 ## VS Code
 
 We use VS Code shortcuts to help build and test our websites. The two things you need to know for this test are:
@@ -51,3 +53,35 @@ Bonus! The website's styles are written in SCSS, which resides in the file [asse
 ---
 
 If you have any questions *at all*, just ask them!
+
+## Installing Prerequisites (Windows)
+
+If I didn't set up the environment for you, there are a few things we need to do before the above VS Code short cuts will work. For all the installers below, simply accept all the defaults and everything should be gravy.
+
+1. Install Golang - <https://go.dev/dl/go1.19.5.windows-amd64.msi>
+2. Install hugo - <https://github.com/gohugoio/hugo/releases/download/v0.110.0/hugo_extended_0.110.0_windows-amd64.zip>
+    1. Open up explorer.exe.
+    2. Navigate to %userprofile% and create directories "go", and then inside "go" create a "bin" directory.
+    3. Copy "hugo.exe" from the hugo zip to this new "bin" folder (should be %userprofile%\go\bin)
+3. [Download & Install Git](https://github.com/git-for-windows/git/releases/download/v2.39.1.windows.1/Git-2.39.1-64-bit.exe). This one asks a lot of questions, but just all the defaults are fine.
+4. [Download & Install "nvm-windows"](https://github.com/coreybutler/nvm-windows/releases/download/1.1.10/nvm-setup.exe)
+    1. Open up Powershell and run `nvm install latest`
+    2. Next, run `nvm use latest`
+    3. To ensure this worked, run `node --version`, and you should see the version of nodejs you just installed
+    4. Install all of the following nodeJS prerequisites for this project by running `npm i -g google-closure-compiler tslib ts yarn`
+5. [Install VS Code](https://code.visualstudio.com/download) (if not installed already, of course)
+6. [Install GitHub Desktop](https://desktop.github.com/).
+    1. Create an account or log in, and choose "Clone a repository from the internet", then click on the "URL" tab on the right.
+    2. First, download the repo "https://github.com/BrianLeishman/tscc". It might ask you to trust the repo, accept if you do :)
+        1. Right click on top-left where it says "Current repository" and "tscc" and click "Copy repo path"
+        2. In Powershell, type "dir" followed by a space, and then paste from the clipboard, and hit enter. Your current folder should look like "C:\Users\brian\Documents\GitHub\tscc"
+        3. Next, run all of the following commands:
+            - `Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Unrestricted` (then press A, ENTER)
+            - `yarn install`
+            - `yarn lerna clean --yes`
+            - `yarn lerna bootstrap` (Allow the network connection if asked)
+            - `yarn tsc`
+            - `cd packages/tscc`
+            - `npm remove -g .`
+            - `npm i -g .`
+    3. Next, click File -> Clone Repository and clone "https://github.com/StirlingMarketingGroup/hugo-test". Then press Ctrl+Shift+A to open this repo in VS Code, and say yes to trusting the author
