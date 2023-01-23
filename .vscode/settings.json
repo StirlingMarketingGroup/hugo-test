@@ -1,5 +1,4 @@
 {
-    "git.branchProtection": ["master"],
     "go.toolsEnvVars": {
         "GO111MODULE": "off"
     }
