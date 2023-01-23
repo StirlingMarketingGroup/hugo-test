@@ -74,7 +74,7 @@ If I didn't set up the environment for you, there are a few things we need to do
     1. Create an account or log in, and choose "Clone a repository from the internet", then click on the "URL" tab on the right.
     2. First, download the repo "https://github.com/BrianLeishman/tscc". It might ask you to trust the repo, accept if you do :)
         1. Right click on top-left where it says "Current repository" and "tscc" and click "Copy repo path"
-        2. In Powershell, type "dir" followed by a space, and then paste from the clipboard, and hit enter. Your current folder should look like "C:\Users\brian\Documents\GitHub\tscc"
+        2. In Powershell, type "cd" followed by a space, and then paste from the clipboard, and hit enter. Your current folder should look like "C:\Users\brian\Documents\GitHub\tscc"
         3. Next, run all of the following commands:
             - `Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Unrestricted` (then press A, ENTER)
             - `yarn install`
@@ -84,7 +84,9 @@ If I didn't set up the environment for you, there are a few things we need to do
             - `cd packages/tscc`
             - `npm remove -g .`
             - `npm i -g .`
-    3. Next, click File -> Clone Repository and clone "https://github.com/StirlingMarketingGroup/hugo-test". Then press Ctrl+Shift+A to open this repo in VS Code, and say yes to trusting the author
-        1. From inside VS Code, press Ctrl+Shift+B and run "Node Install". Look in the running scripts to see the status.
-        2. Next, try running Compile TS, and hopefully it works! If it does, you're set up :)
-        3. Refer to the above instructions to run the Hugo site locally and view it in the browser.
+    3. Next, click File -> Clone Repository and clone "https://github.com/StirlingMarketingGroup/hugo-test".
+        1. Close and reopen GitHub Desktop
+        2. Then press Ctrl+Shift+A to open the "hugo-test" repo in VS Code, and say yes to trusting the author
+        3. From inside VS Code, press Ctrl+Shift+B and run "Node Install". Look in the running scripts to see the status.
+        4. Next, try running Compile TS, and hopefully it works! If it does, you're set up :)
+        5. Refer to the above instructions to run the Hugo site locally and view it in the browser.
