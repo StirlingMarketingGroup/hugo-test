@@ -7,7 +7,7 @@ export default async function main() {
     contactForm?.addEventListener('submit', async e => {
         e.preventDefault();
 
-        axios.post('/contact', {
+        axios.post('/contacts', {
             // params and what
         }).then(resp => {
             console.log('Success!');

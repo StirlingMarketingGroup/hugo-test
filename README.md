@@ -35,7 +35,19 @@ Once the call succeeds, the client should redirect the user to a "Contact Succes
 
 We use VS Code shortcuts to help build and test our websites. The two things you need to know for this test are:
 
-1. Press Ctrl+Shift+B to bring up the build menu, and select and run the entry titled "Hugo Server: Test Site". Once this is running, you should be able to navigate in your browser to <http://test.localhost:10506/contact/> to see your cool new contact form.
-2. Press Ctrl+Shift+B to bring up the build menu, and select and run the entry titled "Compile TS" to compile the TypeScript. You will see the compiling status of your code in the VS Code Terminal, and if it succeeds, the Hugo Test site will refresh with your updated, compiled code.
+1. Press Ctrl+Shift+B to bring up the build menu, and select and run the entry titled "Compile TS" to compile the TypeScript. You will see the compiling status of your code in the VS Code Terminal, and if it succeeds, the Hugo Test site will refresh with your updated, compiled code.
+2. Press Ctrl+Shift+B to bring up the build menu, and select and run the entry titled "Hugo Server: Test Site". Once this is running, you should be able to navigate in your browser to <http://test.localhost:10506/contact/> to see your cool new contact form.
+
+You can view your current running tasks in VS Code by clicking this icon at the bottom:
+
+![Show Running Tasks](images/showbuildtasks.png)
+
+If you are familiar with GitHub, creating a fork of this repository with your changes would be fantastic.
+
+---
 
 Bonus! The website's styles are written in SCSS, which resides in the file [assets/scss/app.scss](assets/scss/app.scss). Edit this file to make this website whatever color you want!# hugo-test
+
+---
+
+If you have any questions *at all*, just ask them!
