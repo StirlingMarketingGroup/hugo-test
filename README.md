@@ -46,7 +46,7 @@ If you are familiar with GitHub, creating a fork of this repository with your ch
 
 ---
 
-Bonus! The website's styles are written in SCSS, which resides in the file [assets/scss/app.scss](assets/scss/app.scss). Edit this file to make this website whatever color you want!# hugo-test
+Bonus! The website's styles are written in SCSS, which resides in the file [assets/scss/app.scss](assets/scss/app.scss). Edit this file to make this website whatever color you want!
 
 ---
 
