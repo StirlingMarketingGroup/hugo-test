@@ -62,7 +62,7 @@ If I didn't set up the environment for you, there are a few things we need to do
 2. Install hugo - <https://github.com/gohugoio/hugo/releases/download/v0.110.0/hugo_extended_0.110.0_windows-amd64.zip>
     1. Open up explorer.exe.
     2. Navigate to %userprofile% and create directories "go", and then inside "go" create a "bin" directory.
-    3. Copy "hugo.exe" from the hugo zip to this new "bin" folder (should be %userprofile%\go\bin)
+    3. Copy "hugo.exe" from the hugo zip to this new "bin" folder (should be "%userprofile%\go\bin", or in my case, "C:\Users\brian\go\bin")
 3. [Download & Install Git](https://github.com/git-for-windows/git/releases/download/v2.39.1.windows.1/Git-2.39.1-64-bit.exe). This one asks a lot of questions, but just all the defaults are fine.
 4. [Download & Install "nvm-windows"](https://github.com/coreybutler/nvm-windows/releases/download/1.1.10/nvm-setup.exe)
     1. Open up Powershell and run `nvm install latest`
