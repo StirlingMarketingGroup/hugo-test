@@ -85,3 +85,6 @@ If I didn't set up the environment for you, there are a few things we need to do
             - `npm remove -g .`
             - `npm i -g .`
     3. Next, click File -> Clone Repository and clone "https://github.com/StirlingMarketingGroup/hugo-test". Then press Ctrl+Shift+A to open this repo in VS Code, and say yes to trusting the author
+        1. From inside VS Code, press Ctrl+Shift+B and run "Node Install". Look in the running scripts to see the status.
+        2. Next, try running Compile TS, and hopefully it works! If it does, you're set up :)
+        3. Refer to the above instructions to run the Hugo site locally and view it in the browser.
