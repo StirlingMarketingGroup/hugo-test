@@ -4,11 +4,13 @@
         "email": "b@rian.gg"
     },
     "devDependencies": {
+        "@tscc/tscc": "github:BrianLeishman/tscc#npm",
         "@types/bootstrap": "^5.0.16",
         "@types/flatpickr": "^3.1.2",
         "@types/imagesloaded": "^4.1.2",
         "@types/masonry-layout": "^4.2.4",
         "bootstrap": "^5.1.3",
+        "google-closure-compiler": "^20230103.0.0",
         "jszip": "^3.7.1",
         "monaco-editor": "^0.29.1",
         "tslib": "^2.4.1"

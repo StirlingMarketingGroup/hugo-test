@@ -34,7 +34,7 @@ func main() {
 	}
 
 	tsccCmd = append(tsccCmd,
-		"tscc",
+		"./node_modules/@tscc/tscc/dist/main.js",
 		"--prefix", fmt.Sprintf("%s/", tmpDir),
 		"--module", "app:ts/main.ts",
 	)
