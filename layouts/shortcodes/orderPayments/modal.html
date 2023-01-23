@@ -1,0 +1,22 @@
+<template id="order-payment-modal-form-template">
+<div id="modal-payment-option"></div>
+<div class="form-check mb-3">
+    <input class="form-check-input" type="radio" name="modal-payment-amount" id="modal-payment-amount-given" checked>
+    <label class="form-check-label" for="modal-payment-amount-given">
+        Balance amount: <b id="modal-balance-amount"></b>
+    </label>
+</div>
+<div class="form-check mb-3">
+    <input class="form-check-input" type="radio" name="modal-payment-amount" id="modal-payment-amount-custom">
+    <label class="form-check-label" for="modal-payment-amount-custom">
+        Custom amount
+    </label>
+</div>
+<div class="mb-3 d-none" id="modal-custom-amount-parent">
+    <label for="modal-custom-amount" class="form-label">Enter payment amount</label>
+    <div class="input-group">
+        <span class="input-group-text">$</span>
+        <input id="modal-custom-amount" type="text" class="form-control" aria-label="Amount (USD)" min="0" step=".01">
+    </div>
+</div>
+</template>

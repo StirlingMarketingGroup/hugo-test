@@ -1,0 +1,3 @@
+{
+    "extends": "/domains/webcore/tslint.json"
+}

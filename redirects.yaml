@@ -1,0 +1,23 @@
+# /: $PARENT/
+# /privacy/: $PARENT/privacy
+# /terms/: $PARENT/terms
+/free-quote/: $PARENT/freequote
+# /blog/: $PARENT/blog
+# /contact/: $PARENT/contact
+# /faq/: $PARENT/faqs
+# /pricing/: $PARENT/pricing
+# /challenge-coins/: $PARENT/pricing
+# /bottle-openers/: $PARENT/bottleopeners
+# /dog-tags/: $PARENT/dogtags
+# /medallions/: $PARENT/medallions
+# /gallery/: $PARENT/gallery
+# /polyester/: $PARENT/polyester
+# /woven/: $PARENT/woven
+# /tube/: $PARENT/tube
+# /nylon/: $PARENT/nylon
+# /100/: $PARENT/100
+# /50/: $PARENT/50
+# /25/: $PARENT/25
+# /pvc/: $PARENT/pvc
+
+# /dashboard/: /orders/

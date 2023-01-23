@@ -1,0 +1,282 @@
+// $primary: #113d1c !default;
+// $secondary: #be27cc !default;
+
+// $border-radius:               0;
+// $border-radius-sm:            0;
+// $border-radius-lg:            0;
+
+// $link-decoration: none;
+// $link-hover-decoration: underline;
+
+@import '../node_modules/bootstrap/scss/functions';
+@import '../node_modules/bootstrap/scss/variables';
+@import '../node_modules/bootstrap/scss/mixins';
+
+$spacers: (
+    0: 0,
+    1: $spacer * 0.25,
+    2: $spacer * 0.5,
+    3: $spacer * 0.75,
+    4: $spacer * 1,
+    5: $spacer * 1.25,
+    6: $spacer * 1.5,
+    7: $spacer * 1.75,
+    8: $spacer * 2,
+    9: $spacer * 2.25,
+    10: $spacer * 2.5,
+    11: $spacer * 2.75,
+    12: $spacer * 3,
+    13: $spacer * 3.25,
+    14: $spacer * 3.5,
+    15: $spacer * 3.75,
+    16: $spacer * 4,
+    17: $spacer * 4.25,
+    18: $spacer * 4.5,
+    19: $spacer * 4.75,
+    20: $spacer * 5,
+);
+
+@import '../node_modules/bootstrap/scss/utilities';
+
+:root { color-scheme: light; }
+
+$utilities: map-merge(
+    $utilities,
+    (
+        "opacity": (
+            property: opacity,
+            values: map-merge(
+                map-get(map-get($utilities, 'opacity'), "values"),
+                (
+                    10: .1,
+                    15: .15,
+                )
+            )
+        ),
+        "font-weight": (
+            property: font-weight,
+            class: fw,
+            values: map-merge(
+                map-get(map-get($utilities, 'font-weight'), "values"),
+                (
+                    500: 500,
+                    600: 600,
+                )
+            )
+        ),
+    )
+);
+
+@each $color, $colorVal in $colors {
+    @each $opacity, $opacityVal in map-get(map-get($utilities, 'opacity'), "values") {
+        $colors: map-merge(
+            $colors,
+            (
+                $color+"-"+$opacity: rgba($colorVal, $opacityVal)
+            )
+        );
+    }
+}
+
+$utilities: map-merge(
+    $utilities,
+    (
+        'color':
+            map-merge(
+                map-get($utilities, 'color'),
+                (
+                    values: map-merge(map-get(map-get($utilities, 'color'), 'values'), $colors),
+                )
+            ),
+        'background-color':
+            map-merge(
+                map-get($utilities, 'background-color'),
+                (
+                    values: map-merge(map-get(map-get($utilities, 'background-color'), 'values'), $colors),
+                )
+            ),
+    )
+);
+
+@each $color, $value in $colors {
+    $table-variants: map-merge(
+        $table-variants,
+        (
+            $color: shift-color($value, $table-bg-scale),
+        )
+    );
+}
+
+@import '../node_modules/bootstrap/scss/root';
+@import '../node_modules/bootstrap/scss/reboot';
+@import '../node_modules/bootstrap/scss/type';
+@import '../node_modules/bootstrap/scss/images';
+@import '../node_modules/bootstrap/scss/containers';
+@import '../node_modules/bootstrap/scss/grid';
+@import '../node_modules/bootstrap/scss/tables';
+@import '../node_modules/bootstrap/scss/forms';
+@import '../node_modules/bootstrap/scss/buttons';
+@import '../node_modules/bootstrap/scss/transitions';
+@import '../node_modules/bootstrap/scss/dropdown';
+@import '../node_modules/bootstrap/scss/button-group';
+@import '../node_modules/bootstrap/scss/nav';
+@import '../node_modules/bootstrap/scss/navbar';
+@import '../node_modules/bootstrap/scss/card';
+// @import "../node_modules/bootstrap/scss/accordion";
+@import '../node_modules/bootstrap/scss/breadcrumb';
+// @import "../node_modules/bootstrap/scss/pagination";
+@import '../node_modules/bootstrap/scss/badge';
+@import '../node_modules/bootstrap/scss/alert';
+@import '../node_modules/bootstrap/scss/progress';
+@import '../node_modules/bootstrap/scss/list-group';
+@import '../node_modules/bootstrap/scss/close';
+@import '../node_modules/bootstrap/scss/toasts';
+@import '../node_modules/bootstrap/scss/modal';
+@import '../node_modules/bootstrap/scss/tooltip';
+@import '../node_modules/bootstrap/scss/popover';
+// @import "../node_modules/bootstrap/scss/carousel";
+@import '../node_modules/bootstrap/scss/spinners';
+// @import "../node_modules/bootstrap/scss/offcanvas";
+
+// Helpers
+@import '../node_modules/bootstrap/scss/helpers';
+
+// Utilities
+@import '../node_modules/bootstrap/scss/utilities/api';
+
+@each $color, $value in $colors {
+    .btn-#{$color} {
+      @include button-variant($value, $value);
+    }
+}
+
+@each $color, $value in $colors {
+    .btn-outline-#{$color} {
+        @include button-outline-variant($value);
+    }
+}
+
+html,
+body {
+    min-height: 100vh;
+}
+
+body {
+    display: flex;
+    overflow-x: hidden;
+    flex-direction: column;
+    flex-basis: 0;
+    min-width: 0;
+    flex-grow: 1;
+}
+
+header {
+    z-index: 1;
+}
+
+#main {
+    padding: 2rem;
+    flex-basis: 0;
+    flex-grow: 1;
+}
+
+label[disabled],
+a[disabled] {
+    opacity: 0.65;
+    pointer-events: none;
+}
+
+.bg-checkered {
+    background-color: #fff;
+    $dark: #eee;
+
+    background-image: -webkit-linear-gradient(45deg, $dark 25%, transparent 0, transparent 75%, $dark 0, $dark),
+        -webkit-linear-gradient(45deg, $dark 25%, transparent 0, transparent 75%, $dark 0, $dark);
+    background-position: 0px 0px, 8px 8px;
+    background-size: 16px 16px;
+}
+
+.nav-flush .nav-link {
+    border-radius: 0;
+}
+
+.outline-0 {
+    outline: none !important;
+}
+
+.upload-thumbnail {
+    position: relative;
+
+    display: inline-block;
+
+    padding: 0.25rem;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 0.25rem;
+    max-width: 100%;
+
+    margin-right: 0.25rem;
+    vertical-align: bottom;
+
+    .upload-thumbnail-close {
+        position: absolute;
+        top: -0.5rem;
+        right: -0.5rem;
+        font-size: 0.6rem;
+        font-weight: 700;
+        line-height: 1;
+        color: #fff;
+        white-space: nowrap;
+        vertical-align: baseline;
+        border-radius: 50%;
+        height: 1rem;
+        width: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+
+        background-color: $primary;
+    }
+
+    img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+    }
+
+    .upload-thumbnail-fallback {
+        display: flex;
+        align-items: center;
+        height: 1.5rem;
+        padding: 0 0.75rem;
+    }
+}
+
+.iti {
+    display: block !important;
+}
+
+.btn .spinner-border-sm {
+    margin-right: .25rem !important;
+}
+
+.form-control::placeholder {
+    font-weight: 300;
+}
+
+.fancybox__container {
+	z-index: 1060 !important;
+}
+
+.iti--separate-dial-code .iti__selected-flag {
+    background-color: transparent !important;
+}
+
+.toast-container {
+    left: 0 !important;
+}
+
+#account-sidebar .nav-link.active {
+    border-radius: 0 !important;
+}

@@ -1,0 +1,39 @@
+<template id="modal-login-code-email">
+<div class="d-flex flex-column">
+    <h1 class="fs-4">Enter your email</h1>
+    <p class="mb-0">
+        We will send you a login code.
+    </p>
+    <input class="form-control form-control-lg my-6" id="modal-email" required type="email" placeholder="Email address">
+</div>
+</template>
+
+<template id="modal-login-code">
+<div class="text-center d-flex flex-column align-items-center">
+    <h1 class="fs-4">We just sent you a code</h1>
+    <p class="mb-0">
+        Please enter the verification code we just sent to<br>
+        <span id="modal-phone"></span>.
+    </p>
+    <input class="form-control form-control-lg text-center my-6" id="modal-code" placeholder="0000" style="max-width:10rem" max="4" min="4" pattern="\d{4}" required>
+    <div>
+        <a href="#" id="modal-resend">Didn't get it? Resend.</a>
+
+        <div role="status" class="spinner-border spinner-border-sm d-none d-inline-block text-secondary">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+</div>
+</template>
+
+<template id="modal-login-select-email">
+<div class="text-center d-flex flex-column align-items-center">
+    <h1 class="fs-4">Select an account</h1>
+    <p class="mb-0">
+        Your phone number is associated with multiple accounts. Please select one from the list to log into.
+    </p>
+    <div class="list-group w-100 mt-6">
+        <a href="#" class="list-group-item list-group-item-action">A second link item</a>
+    </div>
+</div>
+</template>

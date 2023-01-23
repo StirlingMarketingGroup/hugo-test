@@ -1,0 +1,4 @@
+node_modules
+smg*.tgz
+.tscc_temp
+js

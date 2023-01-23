@@ -1,0 +1,16 @@
+<div class="d-block d-lg-none">
+    <hr>
+    {{ range $k, $v := (index $.Site.Data.account.sidebar `nav`) }}
+        {{ if ne $k 0}}
+            <hr>
+        {{ end -}}
+        {{ range $v }}
+            <li class="nav-item">
+                <a href="{{ index . `url` }}" class="nav-link text-white{{ if eq $.RelPermalink (index . `url`)}} active{{ end }}">
+                    <i class="{{ index . `icon` }} fa-fw me-2"></i>
+                    {{ index . `text` }}
+                </a>
+            </li>
+        {{ end -}}
+    {{ end -}}
+</div>

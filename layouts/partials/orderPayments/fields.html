@@ -1,0 +1,26 @@
+<template id="new-order-payment-purchase-order">
+<fieldset>
+    <div class="row g-3">
+        <div class="col-12">
+            <div class="alert alert-info">
+                <h6>We accept purchase orders matching the following requirements</h6>
+
+                <ul class="mb-1">
+                    <li>Must be a government entity, public school, or hospital</li>
+                    <li>Must appear on company letterhead, signed and dated</li>
+                    <li>Terms must explicitly state <b>NET30</b></li>
+                    <li>Total must match the entire total of the order as listed</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-12">
+            <label for="{{ .prefix }}po-number" class="form-label">Purchase Order Number</label>
+            <input class="form-control" id="{{ .prefix }}po-number" type="text" required data-api="po-number" autocomplete="off">
+        </div>
+        <div class="col-12">
+            <label for="{{ .prefix }}uploads" class="form-label">Upload Documents</label>
+            {{ partial `uploader` . }}
+        </div>
+    </div>
+</fieldset>
+</template>

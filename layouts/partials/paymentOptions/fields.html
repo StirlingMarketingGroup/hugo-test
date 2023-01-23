@@ -1,0 +1,87 @@
+<div class="row" id="{{ .prefix }}payment-option-type-parent">
+    <div class="mb-3">
+        <label for="{{ .prefix }}payment-option-type" class="form-label">Method</label>
+        <select class="form-select" id="{{ .prefix }}payment-option-type" required>
+            <option value="1" selected>Credit/Debit Card</option>
+            <option value="8">Bank Account</option>
+            <option value="5">Purchase Order</option>
+            <option value="4">Wire Transfer</option>
+            <option value="2">Check</option>
+            <option value="0">Pay Later</option>
+        </select>
+    </div>
+</div>
+<div class="row">
+    <div class="same-as-shipping">
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="{{ .prefix }}same-as-shipping" checked>
+            <label class="form-check-label" for="{{ .prefix }}same-as-shipping">
+                Address same as shipping
+            </label>
+        </div>
+    </div>
+</div>
+<fieldset class="address-fields d-none">
+    <hr>
+    {{ partial `address/fields` . }}
+</fieldset>
+<fieldset class="row fields-cc">
+    <div class="col-12"><hr></div>
+    <div class="col-md-6">
+        <label for="{{ .prefix }}credit-card-number" class="form-label">Card Number</label>
+        <input class="form-control" id="{{ .prefix }}credit-card-number" type="text" autocomplete="cc-number" required pattern="[0-9\s-]+" data-api="card_type,number">
+    </div>
+    <div class="col-md-4">
+        <label for="{{ .prefix }}credit-card-month" class="form-label">Expiration</label>
+        <div class="d-flex align-items-center">
+            <div class="flex-grow-1">
+                <select class="form-select" id="{{ .prefix }}credit-card-month" autocomplete="cc-exp-month" required>{{ range $m := seq 12 }}
+                    <option value="{{ . }}">{{ . }} - {{ (time (printf `1995-%02d-09` .)).Format `Jan` }}</option>{{ end }}
+                </select>
+            </div>
+            <div class="text-muted px-2">/</div>
+            <div class="flex-grow-1">
+                <select class="form-select" id="{{ .prefix }}credit-card-year" autocomplete="cc-exp-year" required>
+                    {{/* have to generate this in ts sadly, otherwise the years will get outdated */}}
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <label for="{{ .prefix }}credit-card-security" class="form-label">CVC</label>
+        <input class="form-control" id="{{ .prefix }}credit-card-security" type="text" autocomplete="cc-csc" required pattern="[0-9]{3,4}">
+    </div>
+</fieldset>
+<fieldset class="row fields-bank">
+    <div class="col-12"><hr></div>
+    <div class="col-md-12 mb-5">
+        <label for="{{ .prefix }}routing-number" class="form-label">Routing Number</label>
+        <input class="form-control" id="{{ .prefix }}routing-number" type="text" required pattern="[0-9]+">
+    </div>
+    <div class="col-md-12 mb-5">
+        <label for="{{ .prefix }}account-number" class="form-label">Account Number</label>
+        <input class="form-control" id="{{ .prefix }}account-number" type="text" required pattern="[0-9]+">
+    </div>
+    <div class="col-md-12 mb-5">
+        <label class="form-label">Account Type</label><br>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="{{ .prefix }}account-type" id="{{ .prefix }}account-type-checking" value="checking" checked>
+            <label class="form-check-label" for="{{ .prefix }}account-type-checking">Checking</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="{{ .prefix }}account-type" id="{{ .prefix }}account-type-savings" value="savings">
+            <label class="form-check-label" for="{{ .prefix }}account-type-savings">Savings</label>
+        </div>
+    </div>
+    <div class="col-md-12 mb-5">
+        <label class="form-label">Bank Type</label><br>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="{{ .prefix }}bank-type" id="{{ .prefix }}bank-type-personal" value="personal" checked>
+            <label class="form-check-label" for="{{ .prefix }}bank-type-personal">Personal</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="{{ .prefix }}bank-type" id="{{ .prefix }}bank-type-business" value="business">
+            <label class="form-check-label" for="{{ .prefix }}bank-type-business">Business</label>
+        </div>
+    </div>
+</fieldset>

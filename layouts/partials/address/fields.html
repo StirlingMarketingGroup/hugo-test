@@ -1,0 +1,46 @@
+<div class="row g-3">
+    <div class="col-md-6">
+        <label for="{{ .prefix }}full-name" class="form-label">Full Name</label>
+        <input class="form-control" id="{{ .prefix }}full-name" type="text" name="name" required autocomplete="name" data-api="fullName,name" value="">
+    </div>
+    <div class="col-md-6">
+        <label for="{{ .prefix }}company" class="form-label">Company</label>
+        <input class="form-control" id="{{ .prefix }}company" type="text" name="company" autocomplete="organization" data-api="company" value="">
+    </div>
+    <div class="col-12">
+        <label for="{{ .prefix }}country" class="form-label">Country</label>
+        <select class="form-select" id="{{ .prefix }}country" required name="country" autocomplete="country" data-api="country,countryID,country.CountryID,country.id">
+            <option value="">Choose</option>
+        </select>
+    </div>
+    <div class="col-12">
+        <label for="{{ .prefix }}address-line-1" class="form-label">Address Line 1</label>
+        <input class="form-control" id="{{ .prefix }}address-line-1" type="text" name="address" autocomplete="address-line1" placeholder="123 Main St" data-api="addressLine1" value="" required>
+    </div>
+    <div class="col-12">
+        <label for="{{ .prefix }}address-line-2" class="form-label">Address Line 2</label>
+        <input class="form-control" id="{{ .prefix }}address-line-2" type="text" name="address2" autocomplete="address-line2" placeholder="Apartment, studio, or floor" data-api="addressLine2" value="">
+    </div>
+    <div class="col-md-6">
+        <label for="{{ .prefix }}city" class="form-label">City</label>
+        <input class="form-control" id="{{ .prefix }}city" type="text" name="city" autocomplete="address-level2" data-api="city" value="" required>
+    </div>
+    <div class="col-md-4">
+        <label for="{{ .prefix }}state" class="form-label">State</label>
+        <select class="form-select" id="{{ .prefix }}state" name="state" autocomplete="address-level1" data-api="state,sateID,state.stateID,state.id" value="" required>
+            <option value="">Choose</option>
+        </select>
+    </div>
+    <div class="col-md-2">
+        <label for="{{ .prefix }}zip" class="form-label">Zip</label>
+        <input class="form-control" id="{{ .prefix }}zip" type="text" name="zip" autocomplete="postal-code" data-api="zip" value="" required>
+    </div>
+    <div class="col-md-6">
+        <label for="{{ .prefix }}phone" class="form-label">Phone</label>
+        <input class="form-control" id="{{ .prefix }}phone" type="tel" name="phone" autocomplete="tel" data-api="phone" value="" required>
+    </div>
+    <div class="col-md-6">
+        <label for="{{ .prefix }}email" class="form-label">Email</label>
+        <input class="form-control" id="{{ .prefix }}email" type="email" name="email" autocomplete="email" data-api="email" value="" required>
+    </div>
+</div>

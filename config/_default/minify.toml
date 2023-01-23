@@ -1,0 +1,6 @@
+[tdewolff.html]
+keepConditionalComments = true
+keepDocumentTags = true
+keepEndTags = true
+keepWhitespace = true
+keepDefaultAttrVals = true

@@ -1,0 +1,129 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Compile TS",
+            "type": "shell",
+            "command": "go run ./cmd/compile-ts",
+            "group": "build",
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "silent",
+                "panel": "shared",
+            },
+            "options": {
+                "env": {
+                    "GO111MODULE": "off",
+                },
+                "cwd": "${workspaceFolder}/assets",
+            }
+        },
+        {
+            "label": "Install Local ts-smg & Compile TS",
+            "type": "shell",
+            "command": "npm i --save-dev $(npm pack ~/ts-smg | tail -1) && go run ./cmd/compile-ts",
+            "group": "build",
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "silent",
+                "panel": "shared",
+            },
+            "options": {
+                "env": {
+                    "GO111MODULE": "off",
+                },
+                "cwd": "${workspaceFolder}/assets"
+            },
+            "isBackground": true,
+        },
+        {
+            "label": "Install Local ts-smg",
+            "type": "shell",
+            "command": "npm i --save-dev $(npm pack ~/ts-smg | tail -1)",
+            "group": "build",
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "silent",
+                "panel": "shared",
+            },
+            "options": {
+                "cwd": "${workspaceFolder}/assets"
+            },
+            "isBackground": true,
+        },
+        {
+            "label": "Install Latest ts-smg & Compile TS",
+            "type": "shell",
+            "command": "./scripts/install-latest-ts-smg.sh && go run ./cmd/compile-ts",
+            "group": "build",
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "silent",
+                "panel": "shared",
+            },
+            "options": {
+                "env": {
+                    "GO111MODULE": "off",
+                },
+                "cwd": "${workspaceFolder}/assets"
+            },
+            "isBackground": true,
+        },
+        {
+            "label": "Install Latest ts-smg",
+            "type": "shell",
+            "command": "./scripts/install-latest-ts-smg.sh",
+            "group": "build",
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "silent",
+                "panel": "shared",
+            },
+            "options": {
+                "cwd": "${workspaceFolder}/assets"
+            },
+            "isBackground": true,
+        },
+        {
+            "label": "Deploy",
+            "type": "shell",
+            "command": "go run ./assets/cmd/deploy",
+            "group": "build",
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "silent",
+                "panel": "shared",
+            },
+            "options": {
+                "env": {
+                    "AWS_PROFILE": "admin",
+                    "AWS_PAGER": "",
+                    "THEME_DIR": "${workspaceFolder}",
+                    "HUGO_MODULE_REPLACEMENTS": "github.com/StirlingMarketingGroup/hugo-test -> ${workspaceFolder}",
+                    "GO111MODULE": "off",
+                },
+                "cwd": "${workspaceFolder}"
+            }
+        },
+        {
+            "label": "Hugo Server: Test Site",
+            "type": "shell",
+            "command": "hugo server -b http://test.localhost -p 10506 --disableFastRender -v --minify",
+            "group": "build",
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "silent",
+                "panel": "shared",
+            },
+            "options": {
+                "env": {
+                    "HUGO_MODULE_REPLACEMENTS": "github.com/StirlingMarketingGroup/hugo-test -> ${workspaceFolder}",
+                },
+                "cwd": "${workspaceFolder}/sites/test.com"
+            },
+            "isBackground": true,
+        },
+    ]
+}

@@ -1,0 +1,5 @@
+{{ define "main" }}
+<main id="main" class="container{{ with index .Params `fullWidth` }}-fluid{{end}} p-2 p-lg-5">
+    {{ .Content }}
+</main>
+{{ end }}

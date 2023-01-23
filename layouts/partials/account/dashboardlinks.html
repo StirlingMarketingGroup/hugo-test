@@ -1,0 +1,10 @@
+<div class="d-block d-lg-none pb-5">
+    {{ range $k, $v := (index $.Site.Data.account.sidebar `nav`) -}}
+        {{- range $v -}}
+            <a href="{{ index . `url` }}" class="btn btn-secondary me-1 mb-1">
+                <i class="{{ index . `icon` }} "></i>
+                {{ index . `text` }}
+            </a>
+        {{- end -}}
+    {{- end }}
+</div>

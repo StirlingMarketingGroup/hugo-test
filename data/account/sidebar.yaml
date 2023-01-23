@@ -1,0 +1,56 @@
+nav:
+- - url: /dashboard/
+    text: Dashboard
+    icon: fas fa-home
+
+  - url: /orders/
+    text: Orders
+    icon: fas fa-dollar-sign
+
+  - url: /quotes/
+    text: Quotes
+    icon: fas fa-receipt
+
+  # - url: /revision-requests/
+  #   text: Revision Requests
+  #   icon: fas fa-pen-alt
+
+  # - url: /proofs/
+  #   text: Proofs
+  #   icon: fas fa-drafting-compass
+
+  - url: /tracking/
+    text: Tracking
+    icon: fas fa-shipping-fast
+
+  - url: /payment-history/
+    text: Payment History
+    icon: fas fa-file-invoice-dollar
+
+  # - url: /referrals/
+  #   text: Referrals
+  #   icon: fas fa-users
+
+# - - url: /shipping-addresses/
+#     text: Shipping Addresses
+#     icon: fas fa-dolly
+
+#   - url: /payment-methods/
+#     text: Payment Methods
+#     icon: fas fa-money-bill-wave
+
+#   - url: /tax-exemptions/
+#     text: Tax Exemptions
+#     icon: fas fa-stamp
+
+- - url: /uploads/
+    text: File Uploads
+    icon: fas fa-folder
+
+- - url: /change-password/
+    text: Change Password
+    icon: fas fa-key
+
+  - url: /account-settings/
+    text: Account Settings
+    icon: fas fa-cog

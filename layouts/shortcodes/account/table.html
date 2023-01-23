@@ -1,0 +1,166 @@
+<div class="d-flex">
+    <div class="flex-grow-1">
+        <form id="account-search-form">
+            <div class="d-flex">
+                <div class="flex-grow-1">
+                    <input id="account-search-input" type="search" class="form-control" placeholder="Search" autocomplete="off">
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-primary text-white">Go</button>
+                </div>
+            </div>
+            {{/* <div class="mt-1">
+                <button class="btn btn-outline-secondary rounded-pill btn-sm" type="button" id="search-unpaid">
+                    <i class="fas fa-search"></i> Unpaid
+                </button>
+            </div> */}}
+        </form>
+    </div>
+    <div class="flex-grow-1 d-flex justify-content-end align-items-end">
+        <div class="px-2 d-none"><span id="starting-row-number"></span>-<span id="ending-row-number"></span></div>
+        <a id="reload" class="text-decoration-none px-2" href="#"><i class="fas fa-redo-alt"></i></a>
+        <a class="text-decoration-none px-2" href="#" data-bs-toggle="dropdown"><i class="fas fa-cog"></i></a>
+        <ul class="dropdown-menu">
+            <li>
+                <a id="table-edit-visible-columns" class="dropdown-item" href="#">
+                    <i class="fas fa-fw fa-toggle-on"></i>
+                    Show/Hide Columns
+                </a>
+            </li>
+            <li>
+                <a id="table-clear-search" class="dropdown-item" href="#">
+                    <i class="fas fa-fw fa-search"></i>
+                    Clear Search
+                </a>
+            </li>
+            <li>
+                <a id="table-reset-sort-order" class="dropdown-item" href="#">
+                    <i class="fas fa-fw fa-sort-alpha-down"></i>
+                    Reset Sort Order
+                </a>
+            </li>
+            <li>
+                <a id="table-change-page-size" class="dropdown-item" href="#">
+                    <i class="fas fa-fw fa-cog"></i>
+                    Adjust page size
+                </a>
+            </li>
+            <li>
+                <a id="table-export-csv" class="dropdown-item " href="#">
+                    <i class="fas fa-fw fa-file-csv"></i>
+                    Export CSV
+                </a>
+            </li>
+        </ul>
+        <a class="prev-page text-decoration-none px-2" disabled href="#"><i class="fas fa-lg fa-angle-left"></i></a>
+        <a class="next-page text-decoration-none px-2" disabled href="#"><i class="fas fa-lg fa-angle-right"></i></a>
+    </div>
+</div>
+
+<div class="alert alert-secondary border-0 text-body text-center mt-2 mb-0 p-3 d-none" role="alert" id="table-other-checkboxes-checked">
+    You have records checked that aren't visible on this page. <a href="#">Uncheck records outside of this page.</a>
+</div>
+
+<div id="table-parent" class="overflow-auto mt-5">
+    <table class="table table-hover iap-table" id="table">
+        <thead>
+            <tr>
+                <th id="table-header-template">
+                    <div>
+                        <div class="table-header-name flex-grow-1"></div>
+                        <div class="table-header-actions">
+                            <a href="#" class="small text-muted" data-bs-toggle="dropdown">
+                                <i class="fas fa-fw fa-ellipsis-v"></i>
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item table-header-actions-search" href="#">
+                                    <i class="fas fa-fw fa-search"></i>
+                                    Search this column
+                                </a>
+                                <a class="dropdown-item table-header-actions-has" href="#">
+                                    <i class="fas fa-fw fa-filter"></i>
+                                    Filter has "<span class="table-header-actions-has-col">someColumnName</span>"
+                                </a>
+                                <a class="dropdown-item table-header-actions-copy" href="#">
+                                    <i class="fas fa-fw fa-copy"></i>
+                                    Copy column (current page)
+                                </a>
+                                <a class="dropdown-item table-header-actions-gallery" href="#">
+                                    <i class="fas fa-fw fa-images"></i>
+                                    Gallery
+                                </a>
+                                <a class="dropdown-item table-header-actions-hide" href="#">
+                                    <i class="fas fa-fw fa-eye-slash"></i>
+                                    Hide
+                                </a>
+                                <div class="px-4 py-3 mb-0 table-header-stats d-none d-flex flex-column">
+                                    <div class="d-flex justify-content-center align-items-center spinner-parent">
+                                        <div class="spinner-border" role="status">
+                                            <span class="visually-hidden">Loading...</span>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex table-header-stat">
+                                        <div class="text-muted">Records</div>
+                                        <div class="ms-auto table-header-records">45,155</div>
+                                    </div>
+                                    <div class="d-flex table-header-stat">
+                                        <div class="text-muted">Sum</div>
+                                        <div class="ms-auto table-header-sum">$22,221</div>
+                                    </div>
+                                    <div class="d-flex table-header-stat">
+                                        <div class="text-muted">Min</div>
+                                        <div class="ms-auto table-header-min">$86,214</div>
+                                    </div>
+                                    <div class="d-flex table-header-stat">
+                                        <div class="text-muted">Max</div>
+                                        <div class="ms-auto table-header-max">$17,955</div>
+                                    </div>
+                                    <div class="d-flex table-header-stat">
+                                        <div class="text-muted">Avg</div>
+                                        <div class="ms-auto table-header-avg">$90,111</div>
+                                    </div>
+                                    <div class="d-flex table-header-stat">
+                                        <div class="text-muted">10% Trimmed Mean</div>
+                                        <div class="ms-auto table-header-trimmed-10">$48,046</div>
+                                    </div>
+                                    <div class="d-flex table-header-stat">
+                                        <div class="text-muted">20% Trimmed Mean</div>
+                                        <div class="ms-auto table-header-trimmed-20">$35,412</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+<div id="table-spinner" class="text-center">
+    <div class="spinner-border text-primary m-5" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+</div>
+<div id="table-filtered-no-results" class="text-center fs-3 mt-3 d-none">
+    No results for your search. <a id="table-filtered-no-results-link" href="#">Clear default filters?</a>
+</div>
+
+
+<template id="modal-page-size-template">
+<div class="mb-3">
+    <label for="modal-page-size" class="col-form-label">Page Size</label>
+    <input class="form-control" type="number" id="modal-page-size" min="1">
+    <div class="form-text">Default page size is <span id="modal-default-page-size">42,069</span>.</div>
+</div>
+</template>
+
+<template id="modal-page-download-progress-template">
+<div class="progress mb-4">
+  <div class="progress-bar" role="progressbar"></div>
+</div>
+<p>
+    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+    <span id="modal-status">Getting record count...</span>
+</p>
+</template>

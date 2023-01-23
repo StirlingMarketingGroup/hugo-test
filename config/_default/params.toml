@@ -1,0 +1,20 @@
+[css]
+intlTelInput = "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.min.css"
+flatpickr = "https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+fancybox = "https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css"
+grapesjs = "https://unpkg.com/grapesjs/dist/css/grapes.min.css"
+grapesjs-preset-newsletter = "https://unpkg.com/grapesjs-preset-newsletter/dist/grapesjs-preset-newsletter.css"
+
+[js]
+intlTelInput = "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"
+libphonenumber = "https://cdnjs.cloudflare.com/ajax/libs/libphonenumber-js/1.9.52/libphonenumber-js.min.js"
+big = "https://cdn.jsdelivr.net/npm/big.js@6.0.0/big.min.js"
+luxon = "https://cdnjs.cloudflare.com/ajax/libs/luxon/1.26.0/luxon.min.js"
+tinymce = "https://cdnjs.cloudflare.com/ajax/libs/tinymce/5.8.1/tinymce.min.js"
+flatpickr = "https://cdn.jsdelivr.net/npm/flatpickr"
+fancybox = "https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"
+monaco = "https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.23.0/min/vs/loader.min.js"
+monacoVS = "https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.23.0/min/vs"
+pdfJS = "https://d159l1kvshziji.cloudfront.net/proxy/https://cdn.jsdelivr.net/npm/pdfjs-dist@2.5.207/es5/build/pdf.min.js"
+masonry = "https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"
+imagesLoaded = "https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.js"

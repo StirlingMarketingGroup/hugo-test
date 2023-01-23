@@ -1,0 +1,12 @@
+name = "Test!"
+description = "Official theme for the test site"
+tags = []
+features = []
+min_version = "0.41.0"
+
+[author]
+name = "Brian Leishman"
+homepage = "https://github.com/StirlingMarketingGroup/hugo-test"
+
+[imaging.exif]
+excludeFields = ".*"

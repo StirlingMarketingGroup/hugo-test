@@ -1,0 +1,17 @@
+baseURL = "https://my.test.com/"
+languageCode = "en-us"
+title = "Test"
+
+[minify]
+_merge = "deep"
+
+[module.imports]
+path = "github.com/StirlingMarketingGroup/hugo-test"
+
+[params]
+parent = "https://test.com"
+email = "info@test.com"
+phone = "+1-904-657-8742"
+phoneHref = "tel:+1-904-657-8742"
+apiRoot = "https://api2.allaboutchallengecoins.com"
+

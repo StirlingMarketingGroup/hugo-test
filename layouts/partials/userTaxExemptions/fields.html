@@ -1,0 +1,36 @@
+<div class="row g-3">
+    <div class="col-12">
+        <select class="form-select" id="{{ .prefix }}reason" required data-api="userTaxExemptionReasonID" autocomplete="off">
+            <option value="">Choose...</option>
+            <option value="0">Not Exempt</option>
+            <option value="2">Government Exemption</option>
+            <option value="3">Wholesale or Retail Exemption</option>
+            <option value="3">Tax Exempt Entity</option>
+        </select>
+    </div>
+    <fieldset id="{{ .prefix }}additional-fields" class="d-none col-12">
+        <div class="row g-3">
+            <div class="col-12">
+                <label for="{{ .prefix }}number" class="form-label">Tax Exempt Number</label>
+                <input class="form-control" id="{{ .prefix }}number" type="text" required data-api="number" autocomplete="off">
+            </div>
+            <div class="col-12 d-none">
+                <label for="{{ .prefix }}country" class="form-label">Country</label>
+                <select class="form-select" id="{{ .prefix }}country" name="country" autocomplete="country" data-api="country,countryID,country.CountryID,country.id" required>
+                    <option value="">Choose</option>
+                </select>
+            </div>
+            <div class="col-12">
+                <label for="{{ .prefix }}state" class="form-label">State</label>
+                <select class="form-select" id="{{ .prefix }}state" name="state" autocomplete="address-level1" data-api="state,sateID,state.stateID,state.id" required>
+                    <option value="">Choose</option>
+                    <option value="0">Certificate valid in all states</option>
+                </select>
+            </div>
+            <div class="col-12">
+                <label for="{{ .prefix }}uploads" class="form-label">Upload Documents</label>
+                {{ partial `uploader` . }}
+            </div>
+        </div>
+    </fieldset>
+</div>

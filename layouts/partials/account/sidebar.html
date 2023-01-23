@@ -1,0 +1,17 @@
+<div id="account-sidebar" class="d-none d-lg-flex flex-column flex-shrink-0 bg-light shadow me-5 pb-6" style="width: 280px;">
+    <ul class="nav nav-pills flex-column mb-auto">
+        {{ range $k, $v := (index $.Site.Data.account.sidebar `nav`) }}
+            {{ if ne $k 0}}
+                <hr>
+            {{ end -}}
+            {{ range $v }}
+                <li>
+                    <a href="{{ index . `url` }}" class="nav-link link-dark{{ if eq $.RelPermalink (index . `url`)}} active bg-secondary{{ end }}">
+                        <i class="{{ index . `icon` }} fa-fw me-2"></i>
+                        {{ index . `text` }}
+                    </a>
+                </li>
+            {{ end -}}
+        {{ end -}}
+    </ul>
+</div>

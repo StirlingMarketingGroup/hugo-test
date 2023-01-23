@@ -1,0 +1,40 @@
+<div class="row mb-3 row-cols-1 row-cols-sm-2">
+    <div class="col mb-3 mb-sm-0">
+        <form id="search-form">
+            <div class="input-group">
+                <input type="text" id="search" placeholder="Search" class="form-control" autocomplete="off">
+                <button class="btn btn-outline-primary" type="submit" id="search-button">Go</button>
+            </div>
+        </form>
+    </div>
+    <div class="col d-flex justify-content-end align-items-center">
+        {{- with .Page.Params.sort }}
+        <div>
+            Sort:
+        </div>
+        <div class="ms-1 me-auto me-sm-3">
+            <select class="form-select" id="sort" autocomplete="off">
+                {{- range . }}{{ range $sort, $name := . }}
+                <option value="{{ $sort }}">{{ $name }}</option>
+                {{- end }}{{ end }}
+            </select>
+        </div>
+        {{- end }}
+
+        <div class="row-num-container d-none"><span class="first-row-num">1</span> - <span class="last-row-num">100</span></div>
+        <div class="btn-group ms-2">
+            <button class="btn btn-secondary prev-page" disabled><i class="fas fa-arrow-left"></i></button>
+            <button class="btn btn-secondary next-page" disabled><i class="fas fa-arrow-right"></i></button>
+        </div>
+    </div>
+</div>
+
+<div class="position-relative" style="min-height:10rem">
+    <div id="rows-spinner-parent" class="position-absolute">
+        <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+
+    <div id="rows-parent" class="d-flex flex-column"></div>
+</div>

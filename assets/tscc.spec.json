@@ -1,0 +1,38 @@
+{
+  "external": {
+    "jquery": "$",
+    "sweetalert2": "Swal",
+    "ladda": "Ladda",
+    "luxon": "luxon",
+    "intl-tel-input": "intlTelInput",
+    "grecaptcha": "grecaptcha",
+    "big.js": "Big",
+    "axios": "axios",
+    "jszip": "JSZip",
+    "file-saver": "FileSaver",
+    "pdfjs-dist": "pdfjsLib",
+    "libphonenumber-js": "libphonenumber",
+    "selectize": "selectize",
+    "bootstrap": "bootstrap",
+    "flatpickr": "flatpickr",
+    "tinymce": "tinymce",
+    "konva": "Konva",
+    "@simonwep/pickr": "Pickr",
+    "monaco-editor": "monaco",
+    "font-picker": "FontPicker",
+    "./ts/types/grapesjs": "grapesjs",
+    "masonry-layout": "Masonry",
+    "imagesloaded": "imagesLoaded",
+    "markdown-it": "markdownit",
+    "highlightjs": "hljs",
+    "qs": "Qs"
+  },
+  "compilerFlags": {
+    "rewrite_polyfills": true,
+    "language_in": "ES6",
+    "language_out": "ES5",
+    "compilation_level": "ADVANCED_OPTIMIZATIONS",
+    "use_types_for_optimization": true,
+    "output_wrapper": "(function(){%output%})()"
+  }
+}

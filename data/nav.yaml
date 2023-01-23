@@ -1,0 +1,15 @@
+- url: /gallery/
+  text: Gallery
+  icon: fas fa-icons
+
+- url: /faq/
+  text: FAQ
+  icon: fas fa-question
+
+- url: /blog/
+  text: Blog
+  icon: fas fa-rss
+
+- url: /quote/
+  text: Ready to Order?
+  icon: fas fa-check

@@ -1,0 +1,36 @@
+{
+    "compilerOptions": {
+        "alwaysStrict": true,
+        "strict": true,
+        "sourceMap": true,
+        "noImplicitAny": true,
+        "allowJs": false,
+        "target": "es6",
+        "noEmitOnError": true,
+        "lib": [
+            "es6",
+            "dom"
+        ],
+        "plugins": [
+            {
+                "name": "typescript-tslint-plugin",
+                "alwaysShowRuleFailuresAsWarnings": false,
+                "configFile": "tslint.json",
+                "suppressWhileTypeErrorsPresent": false,
+                "ignoreDefinitionFiles": true
+            }
+        ],
+        "baseUrl": "./",
+        "rootDir": "./",
+        "typeRoots": ["./node_modules/@types", "./ts/types"],
+        "paths": {
+            "smg/*": ["./node_modules/smg/lib/*"],
+            "*": ["*", "./ts/types/*"]
+        },
+        "moduleResolution": "node"
+    },
+    "include": [
+        "ts/**/*.ts",
+        "node_modules/smg/lib/**/*.ts"
+    ],
+}
