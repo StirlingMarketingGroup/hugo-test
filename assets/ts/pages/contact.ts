@@ -11,9 +11,10 @@ export default async function main() {
             "name": (contactForm.querySelector('#contact-first-name') as HTMLInputElement).value + " " + (contactForm.querySelector('#contact-last-name') as HTMLInputElement).value,
             "company": (contactForm.querySelector('#contact-organization') as HTMLInputElement).value,
             "email": (contactForm.querySelector('#contact-email') as HTMLInputElement).value,
-            "phone": (contactForm.querySelector('#contact-phone') as HTMLInputElement).value,
+            "phone": "+" + (contactForm.querySelector('#contact-phone') as HTMLInputElement).value,
             "content": "TEST submission please ignore",
-            "referrer": "https://test.com"
+            "referrer": window.location.href,
+            "reCaptcha": "yes"
         }).then(() => {
             console.log('Success!');
             window.location.href = '/contact-success/'
