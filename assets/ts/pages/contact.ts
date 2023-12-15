@@ -8,10 +8,15 @@ export default async function main() {
         e.preventDefault();
 
         axios.post('/contacts', {
-            // params and what
-        }).then(resp => {
+            "name": (contactForm.querySelector('#contact-first-name') as HTMLInputElement).value + " " + (contactForm.querySelector('#contact-last-name') as HTMLInputElement).value,
+            "company": (contactForm.querySelector('#contact-organization') as HTMLInputElement).value,
+            "email": (contactForm.querySelector('#contact-email') as HTMLInputElement).value,
+            "phone": (contactForm.querySelector('#contact-phone') as HTMLInputElement).value,
+            "content": "TEST submission please ignore",
+            "referrer": "https://test.com"
+        }).then(() => {
             console.log('Success!');
-            // redirect to success page
-        }).catch(err => alert(err));
+            window.location.href = '/contact-success/'
+        }).catch(err => console.error(err));
     });
 }

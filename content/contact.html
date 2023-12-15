@@ -9,23 +9,25 @@ id: contact
     <form id="contact-form">
         <!-- here be contact info fields -->
         <div class="mb-3">
-            <div class="row mb-3">
-                <div class="col">
-                    <input type="text" class="form-control" placeholder="First Name">
+            <fieldset>
+                <div class="row mb-3">
+                    <div class="col">
+                        <input id="contact-first-name" type="text" class="form-control" placeholder="First Name">
+                    </div>
+                    <div class="col">
+                        <input id="contact-last-name" type="text" class="form-control" placeholder="Last Name">
+                    </div>
                 </div>
-                <div class="col">
-                    <input type="text" class="form-control" placeholder="Last Name">
+                <div class="row-auto mb-3">
+                    <input id="contact-organization" type="text" class="form-control" placeholder="Organization">
                 </div>
-            </div>
-            <div class="row-auto mb-3">
-                <input type="text" class="form-control" placeholder="Organization">
-            </div>
-            <div class="row-auto mb-3">
-                <input type="text" class="form-control" placeholder="Email Address">
-            </div>
-            <div class="row-auto mb-3">
-                <input type="text" class="form-control" placeholder="Phone Number">
-            </div>
+                <div class="row-auto mb-3">
+                    <input id="contact-email" type="text" class="form-control" placeholder="Email Address">
+                </div>
+                <div class="row-auto mb-3">
+                    <input id="contact-phone" type="text" class="form-control" placeholder="Phone Number">
+                </div>
+            </fieldset>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
