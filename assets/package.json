@@ -18,6 +18,6 @@
     "dependencies": {
         "@fancyapps/ui": "^4.0.0-alpha.2",
         "@types/qs": "^6.9.7",
-        "axios": "^1.1.2"
+        "axios": "^1.6.0"
     }
 }
